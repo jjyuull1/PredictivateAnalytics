@@ -50,8 +50,32 @@ Dataset ini berisi data dari 768 pasien dengan 9 fitur yang digunakan untuk memp
 
 ### Visualization & Analysis
 - Univariate Analysis
+Berdasarkan Visualisasi Gambar xx, distribusi data numerik menunjukkan bahwa Pregnancies sebagian besar berada di 0–3, sementara Glucose terdistribusi antara 80-120. BloodPressure sebagian besar berada di kisaran 70-80 mmHg, sedangkan SkinThickness banyak memiliki nilai 0, yang menandakan data hilang atau rendah. Insulin sebagian besar memiliki nilai rendah, dengan beberapa nilai ekstrem. BMI terdistribusi di kisaran 20-40 dengan puncak di sekitar 30. Diabetes Pedigree Function sebagian besar berada di sekitar 0.2, dan Age mayoritas berada di kisaran 20-30 tahun.
 - Multivariate Analysis
-- Outliners
+Berdasarkan analisis multivariat yang ditunjukkan oleh pairplot dan matriks korelasi, dapat dilihat adanya hubungan yang cukup signifikan antara berbagai variabel dalam dataset **Pima Indians Diabetes**. Pada **Pregnancies** dan **Age**, terlihat adanya korelasi positif yang cukup kuat, yang menunjukkan bahwa semakin tua usia seseorang, semakin banyak jumlah kehamilan yang dimiliki. Hubungan antara **Glucose** dan **BMI** juga moderat, yang menunjukkan bahwa kadar glukosa cenderung lebih tinggi pada individu dengan BMI yang lebih tinggi. Selain itu, **Insulin** dan **SkinThickness** memiliki korelasi positif yang lebih tinggi, yang mengindikasikan bahwa pasien dengan kadar insulin tinggi cenderung memiliki ketebalan kulit lebih besar.
+Pada matriks korelasi, **Pregnancies** dan **Age** menunjukkan korelasi yang kuat (0.64), mempertegas temuan bahwa semakin tua usia pasien, semakin banyak kehamilan yang dimiliki. Selain itu, **BMI** dan **Insulin** memiliki korelasi tinggi (0.49), menunjukkan bahwa pasien dengan BMI yang lebih tinggi cenderung memiliki kadar insulin yang lebih tinggi.
+Secara keseluruhan, analisis ini mengungkapkan bahwa ada hubungan yang kuat dan moderat antara beberapa variabel, terutama antara **Age**, **Pregnancies**, **Glucose**, **BMI**. Yang memberikan wawasan penting dalam memahami faktor-faktor yang berkontribusi terhadap risiko diabetes pada pasien dalam dataset ini.
+
 ## 🧹 Data Preparation
+Data Preparation adalah proses dalam mempersiapkan data mentah agar dapat digunakan untuk analisis atau pemodelan lebih lanjut. Berikut beberapa teknik yang digunakan dalam persiapan data pada proyek ini:
+- Penanganan Outliers
+Outliers adalah data yang memiliki nilai jauh lebih tinggi atau lebih rendah dibandingkan dengan sebagian besar data lainnya dalam sebuah dataset. Pada proyek ini, meskipun tidak ditemukan missing value maupun duplikat data, namun terdapat beberapa outliers yang perlu ditangani agar model yang dibangun tetap akurat. Outliers bisa muncul karena berbagai alasan, seperti kesalahan pengukuran, data yang tidak sesuai, atau kejadian yang jarang terjadi.
+Untuk menangani outliers, salah satu metode yang digunakan adalah IQR (Interquartile Range). IQR adalah selisih antara kuartil ketiga (Q3) dan kuartil pertama (Q1).
+(gambar)
+Dengan menggunakan metode IQR, dataset ini dapat dibersihkan dari outliers yang berpotensi merusak kualitas model, sehingga analisis dan pemodelan yang dilakukan lebih dapat diandalkan. Setelah penanganan outliers, dataset menjadi lebih konsisten dan siap digunakan dalam proses analisis lebih lanjut atau pembuatan model prediksi yang lebih baik.
+- Data Splitting
+Data Splitting adalah proses membagi dataset menjadi dua bagian: satu untuk pelatihan model dan satu lagi untuk pengujian model. Pada proyek ini, pembagian dilakukan menggunakan metode Train-Test Split dengan proporsi 80:20 untuk data pelatihan dan data pengujian. Hal ini bertujuan untuk memastikan bahwa model yang dibangun dapat dievaluasi dengan data yang terpisah dari data pelatihan, sehingga memberikan gambaran yang lebih objektif tentang kinerjanya.
+- Standarisasi
+Proses **standarisasi** dimulai dengan menginisialisasi objek `StandardScaler`, yang bertujuan untuk menormalkan data agar memiliki skala yang seragam. Langkah pertama adalah melakukan **fitting dan transformasi** pada data latih (X\_train) menggunakan `fit_transform()`, yang menghitung rata-rata dan standar deviasi pada data latih, kemudian mentransformasi data tersebut menjadi data dengan rata-rata 0 dan standar deviasi 1. Setelah itu, data uji (X\_test) ditransformasi menggunakan `transform()` agar distandarisasi dengan parameter yang sama seperti data latih.
+##### Dataframe hasil Standarisasi
+| Pregnancies | Glucose  | BloodPressure | SkinThickness | Insulin  | BMI     | DiabetesPedigreeFunction | Age     | Outcome |
+|--------------|----------|---------------|---------------|----------|---------|--------------------------|---------|---------|
+| -1.139048    | -0.296986 | -0.922834     | 0.580369      | 0.135153 | 0.772158| 1.515812                 | -0.672165 | 1       |
+| -1.139048    | -0.048581 | -0.407485     | -1.371289     | -0.857601| 0.251391| -0.587158                | -0.877139 | 1       |
+| -0.832726    | 0.199825  | 1.547758      | 1.295977      | 1.423050 | 2.145089| 0.418229                 | -0.569679 | 0       |
+| 1.311526     | 1.524654  | 0.597531      | 0.710480      | 1.959674 | 1.766349| 0.457742                 | 0.455189  | 1       |
+| -1.139048    | 0.945041  | -0.352697     | -0.460515     | 1.127907 | -1.089978| -1.179853                | -1.082112 | 0       |
+Standarisasi ini penting untuk memastikan bahwa semua fitur memiliki rentang nilai yang seragam, yang memungkinkan model machine learning untuk bekerja lebih efektif, terutama untuk algoritma yang sensitif terhadap perbedaan skala fitur.
+
 ## 🤖 Modeling
 ## 📊 Evaluation
