@@ -66,6 +66,7 @@ Dengan menggunakan metode IQR, dataset ini dapat dibersihkan dari outliers yang 
 - Data Splitting
 Data Splitting adalah proses membagi dataset menjadi dua bagian: satu untuk pelatihan model dan satu lagi untuk pengujian model. Pada proyek ini, pembagian dilakukan menggunakan metode Train-Test Split dengan proporsi 80:20 untuk data pelatihan dan data pengujian. Hal ini bertujuan untuk memastikan bahwa model yang dibangun dapat dievaluasi dengan data yang terpisah dari data pelatihan, sehingga memberikan gambaran yang lebih objektif tentang kinerjanya.
 - Standarisasi
+
 Proses **standarisasi** dimulai dengan menginisialisasi objek `StandardScaler`, yang bertujuan untuk menormalkan data agar memiliki skala yang seragam. Langkah pertama adalah melakukan **fitting dan transformasi** pada data latih (X\_train) menggunakan `fit_transform()`, yang menghitung rata-rata dan standar deviasi pada data latih, kemudian mentransformasi data tersebut menjadi data dengan rata-rata 0 dan standar deviasi 1. Setelah itu, data uji (X\_test) ditransformasi menggunakan `transform()` agar distandarisasi dengan parameter yang sama seperti data latih.
 ##### Dataframe hasil Standarisasi
 | Pregnancies | Glucose  | BloodPressure | SkinThickness | Insulin  | BMI     | DiabetesPedigreeFunction | Age     | Outcome |
@@ -75,6 +76,7 @@ Proses **standarisasi** dimulai dengan menginisialisasi objek `StandardScaler`, 
 | -0.832726    | 0.199825  | 1.547758      | 1.295977      | 1.423050 | 2.145089| 0.418229                 | -0.569679 | 0       |
 | 1.311526     | 1.524654  | 0.597531      | 0.710480      | 1.959674 | 1.766349| 0.457742                 | 0.455189  | 1       |
 | -1.139048    | 0.945041  | -0.352697     | -0.460515     | 1.127907 | -1.089978| -1.179853                | -1.082112 | 0       |
+
 Standarisasi ini penting untuk memastikan bahwa semua fitur memiliki rentang nilai yang seragam, yang memungkinkan model machine learning untuk bekerja lebih efektif, terutama untuk algoritma yang sensitif terhadap perbedaan skala fitur.
 
 ## 🤖 Modeling
