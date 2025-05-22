@@ -58,12 +58,12 @@ Dataset ini berisi data dari 768 pasien dengan 9 fitur yang digunakan untuk memp
   <br>
   <em>Gambar 1. PieChart Distribusi Outcome</em>
 </p>
-Berdasarkan Visualisasi piechart menunjukan jumlah penderita diabetes yaitu mencapai 149 orang (26.8%) dan yang tidak memiliki penyakit diabetes yaotu 407 orang (73.2) dari total 556 sample dari dataset.
+Berdasarkan Visualisasi piechart menunjukan jumlah penderita diabetes yaitu mencapai 149 orang (26.8%) dan yang tidak memiliki penyakit diabetes yaitu 407 orang (73.2) dari total 556 sample dari dataset.
 
 <p align="center">
   <img src="https://github.com/user-attachments/assets/71c02794-56ee-4244-bdfd-5ba2bdc41fb8" alt="piechart" width="400"/>
   <br>
-  <em>Gambar 2. Histrogram Feature Numerik</em>
+  <em>Gambar 2. Histogram Feature Numerik</em>
 </p>
 
 Berdasarkan Visualisasi Gambar 2, distribusi data numerik menunjukkan bahwa Pregnancies sebagian besar berada di 0–3, sementara Glucose terdistribusi antara 80-120. BloodPressure sebagian besar berada di kisaran 70-80 mmHg, sedangkan SkinThickness banyak memiliki nilai 0, yang menandakan data hilang atau rendah. Insulin sebagian besar memiliki nilai rendah, dengan beberapa nilai ekstrem. BMI terdistribusi di kisaran 20-40 dengan puncak di sekitar 30. Diabetes Pedigree Function sebagian besar berada di sekitar 0.2, dan Age mayoritas berada di kisaran 20-30 tahun.
@@ -108,9 +108,9 @@ Data Splitting adalah proses membagi dataset menjadi dua bagian: satu untuk pela
 |               | 1     | 120    |
 | Data Pengujian (`y_test`)  | 0     | 83     |
 |               | 1     | 29     |
-- Standarisasi
+- Standardisasi
 
-Proses **standarisasi** dimulai dengan menginisialisasi objek `StandardScaler`, yang bertujuan untuk menormalkan data agar memiliki skala yang seragam. Langkah pertama adalah melakukan **fitting dan transformasi** pada data latih (X\_train) menggunakan `fit_transform()`, yang menghitung rata-rata dan standar deviasi pada data latih, kemudian mentransformasi data tersebut menjadi data dengan rata-rata 0 dan standar deviasi 1. Setelah itu, data uji (X\_test) ditransformasi menggunakan `transform()` agar distandarisasi dengan parameter yang sama seperti data latih.
+Proses **standardisasi** dimulai dengan menginisialisasi objek `StandardScaler`, yang bertujuan untuk menormalkan data agar memiliki skala yang seragam. Langkah pertama adalah melakukan **fitting dan transformasi** pada data latih (X\_train) menggunakan `fit_transform()`, yang menghitung rata-rata dan standar deviasi pada data latih, kemudian mentransformasi data tersebut menjadi data dengan rata-rata 0 dan standar deviasi 1. Setelah itu, data uji (X\_test) ditransformasi menggunakan `transform()` agar distandarisasi dengan parameter yang sama seperti data latih.
 ##### Dataframe hasil Standarisasi
 | Pregnancies | Glucose  | BloodPressure | SkinThickness | Insulin  | BMI     | DiabetesPedigreeFunction | Age     | Outcome |
 |--------------|----------|---------------|---------------|----------|---------|--------------------------|---------|---------|
