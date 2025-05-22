@@ -186,10 +186,10 @@ Kedua model memiliki performa yang cukup baik dengan akurasi di atas 80%. Meskip
 
 
 ## References
-[1] RSUD Jembrana, "Memperingati Hari Diabetes Sedunia 2024: Mendorong kesadaran dan perubahan positif," *RSU Jembrana*, 2024. [Online]. Available: https://rsu.jembranakab.go.id/berita/read/46/memperingati-hari-diabetes-sedunia-2024-mendorong-kesadaran-dan-perubahan-positif.html
+[1] RSUD Jembrana, "Memperingati Hari Diabetes Sedunia 2024: Mendorong kesadaran dan perubahan positif," *RSU Jembrana*, 2024.
 
 [2] A. S. Ayu, A. I. Alamsyah, and A. A. Pambudi, "Implementasi algoritma Support Vector Machine (SVM) untuk klasifikasi data penyakit diabetes melitus," *Jurnal Nasional Teknik Elektro dan Teknologi Informasi (JNTETI)*, vol. 11, no. 1, pp. 26–32, 2022.
 
-[3] IBM, "Apa itu Support Vector Machine?," *IBM Indonesia*, 2023. [Online]. Available: https://www.ibm.com/id-id/think/topics/support-vector-machine
+[3] IBM, "Apa itu Support Vector Machine?," *IBM Indonesia*, 2023.
 
 [4] J. W. Smith, J. E. Everhart, W. C. Dickson, W. C. Knowler, and R. S. Johannes, "Using the ADAP learning algorithm to forecast the onset of diabetes mellitus," in *Proceedings of the Symposium on Computer Applications and Medical Care*, 1988, pp. 261–265.
