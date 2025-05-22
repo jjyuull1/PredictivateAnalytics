@@ -2,6 +2,7 @@
 ## 🧠 Domain Proyek
 Domain yang dipilih untuk proyek machine learning ini adalah di bidang **Kesehatan**, dengan judul **Predictive Analytics: Prediksi Diabetes**.
 ### Latar Belakang
+![Diabetes](https://www.unesa.ac.id/images/foto-03-10-2024-10-36-52-5249.png)
 Diabetes merupakan penyakit kronis yang berdampak signifikan terhadap kesehatan global. Menurut Organisasi Kesehatan Dunia (WHO), jumlah penderita diabetes terus meningkat secara global, termasuk di kalangan masyarakat. Mendeteksi diabetes secara dini sangat penting untuk mencegah komplikasi yang serius, seperti kerusakan ginjal, penyakit kardiovaskular, dan kebutaan.
 Prediksi diabetes dapat membantu tenaga medis dan pengambil kebijakan dalam memberikan intervensi dini serta meningkatkan kualitas hidup pasien. Dalam konteks ini, pendekatan Machine Learning (ML) digunakan untuk membangun model prediksi berbasis data medis guna mempermudah identifikasi risiko diabetes pada masyarakat Pima.
 Berdasarkan penelitian yang dilakukan oleh Smith et al. (1988), dataset Pima Indians Diabetes dari UCI Machine Learning Repository merupakan kumpulan data yang sering digunakan dalam penelitian prediksi diabetes. Dataset ini memuat parameter kesehatan seperti tekanan darah, kadar glukosa, dan indeks massa tubuh (BMI), yang merupakan faktor risiko penting dalam diagnosis diabetes.
@@ -80,4 +81,62 @@ Proses **standarisasi** dimulai dengan menginisialisasi objek `StandardScaler`, 
 Standarisasi ini penting untuk memastikan bahwa semua fitur memiliki rentang nilai yang seragam, yang memungkinkan model machine learning untuk bekerja lebih efektif, terutama untuk algoritma yang sensitif terhadap perbedaan skala fitur.
 
 ## 🤖 Modeling
+Pada tahap ini, dilakukan pembangunan model machine learning untuk menyelesaikan permasalahan klasifikasi pada dataset yang telah melalui proses pra-pemrosesan sebelumnya. Dua algoritma yang digunakan dalam proses modeling adalah Support Vector Machine (SVM) dengan kernel linear dan Logistic Regression.
+#### 1. Tahapan dan Parameter Pemodelan
+- Support Vector Machine (SVM)
+
+Proses pelatihan dilakukan dengan membagi data menjadi data latih dan data uji (dengan: 80:20). Model SVM dilatih untuk menemukan hyperplane terbaik yang memisahkan dua kelas secara maksimal.
+- Logistic Regression
+
+Model Logistic Regression dilatih untuk mempelajari hubungan linier antara fitur input dan probabilitas terklasifikasinya data ke masing-masing kelas target.
+
+#### 2. Evaluasi Awal dan Perbandingan Akurasi
+
+| Model                | Akurasi (%) |
+|----------------------|-------------|
+| SVM (Linear Kernel)  | 82.14       |
+| Logistic Regression  | 83.04       |
+
+Hasil evaluasi awal menunjukkan bahwa Logistic Regression sedikit lebih unggul dalam akurasi, walaupun perbedaannya relatif kecil.
+
+---
+
+#### 3. Kelebihan dan Kekurangan Setiap Algoritma
+
+| Algoritma            | Kelebihan                                                                 | Kekurangan                                                                 |
+|----------------------|---------------------------------------------------------------------------|----------------------------------------------------------------------------|
+| **SVM**              | • Akurat pada data berdimensi tinggi<br>• Margin optimal                  | • Kurang interpretatif<br>• Kurang efisien pada dataset besar             |
+| **Logistic Regression** | • Cepat dan sederhana<br>• Mudah diinterpretasikan                     | • Tidak optimal untuk data yang tidak linier<br>• Rentan terhadap outlier |
+
 ## 📊 Evaluation
+### Metrik Evaluasi yang Digunakan
+Dalam evaluasi model klasifikasi, digunakan beberapa metrik utama yang diperoleh dari classification report, yaitu:
+- Precision: Proporsi prediksi positif yang benar-benar positif.
+- Recall: Proporsi data positif yang berhasil ditemukan oleh model.
+- F1-Score: Harmonik rata-rata antara precision dan recall, memberikan keseimbangan antara keduanya.
+- Accuracy: Proporsi prediksi yang benar secara keseluruhan.
+#### Hasil Evaluasi Model
+##### Support Vector Machine (SVM) dengan Kernel Linear
+| Kelas    | Precision | Recall | F1-Score | Support |
+|----------|-----------|--------|----------|---------|
+| 0        | 0.85      | 0.93   | 0.89     | 83      |
+| 1        | 0.71      | 0.52   | 0.60     | 29      |
+| **Accuracy** |           |        | **0.82** | 112     |
+
+Model SVM menunjukkan performa baik pada kelas 0 dengan precision dan recall tinggi, namun performa menurun pada kelas 1, khususnya recall yang rendah (0.52). Hal ini menunjukkan model masih kesulitan mendeteksi beberapa sampel kelas 1 (false negatives cukup tinggi).
+
+##### Logistic Regression
+| Kelas    | Precision | Recall | F1-Score | Support |
+|----------|-----------|--------|----------|---------|
+| 0        | 0.85      | 0.94   | 0.89     | 83      |
+| 1        | 0.75      | 0.52   | 0.61     | 29      |
+| **Accuracy** |           |        | **0.83** | 112     |
+
+Model Logistic Regression memiliki performa serupa dengan SVM, dengan sedikit peningkatan pada precision kelas 1 (0.75) dan akurasi keseluruhan (83%). Namun, recall untuk kelas 1 tetap rendah, mengindikasikan tantangan yang sama dalam mendeteksi kelas minoritas.
+
+#### Confusion Matrix
+Confusion matrix adalah tabel yang digunakan untuk mengevaluasi performa model klasifikasi dengan membandingkan prediksi model dengan data asli. Confusion matrix untuk klasifikasi biner terdiri dari empat komponen:
+|                  | Prediksi Positif    | Prediksi Negatif    |
+|------------------|---------------------|---------------------|
+| **Aktual Positif** | True Positive (TP)  | False Negative (FN)  |
+| **Aktual Negatif** | False Positive (FP) | True Negative (TN)   |
