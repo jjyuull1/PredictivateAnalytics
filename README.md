@@ -182,5 +182,5 @@ Model Logistic Regression memiliki performa serupa dengan SVM, dengan sedikit pe
   <br>
   <em>Gambar 1. Visualisasi Perbandingan Akurasi</em>
 </p>
-Kedua model memiliki performa yang cukup baik dengan akurasi di atas 80%. Meskipun perbedaan akurasi antara keduanya tidak signifikan (sekitar 0.9%), **Logistic Regression** menunjukkan hasil yang sedikit lebih baik dibandingkan **SVM** dalam konteks Pima Indias Dataset.
+Kedua model memiliki performa yang cukup baik dengan akurasi di atas 80%. Meskipun perbedaan akurasi antara keduanya tidak signifikan (sekitar 0.9%), Logistic Regression menunjukkan hasil yang sedikit lebih baik dibandingkan SVM dalam konteks Pima Indias Dataset.
 
