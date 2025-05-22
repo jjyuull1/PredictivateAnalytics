@@ -3,6 +3,7 @@
 Domain yang dipilih untuk proyek machine learning ini adalah di bidang **Kesehatan**, dengan judul **Predictive Analytics: Prediksi Diabetes**.
 ### Latar Belakang
 ![diabetes](https://github.com/user-attachments/assets/edd760e8-6e88-4bc2-91b2-66e9a9929add)
+
 Diabetes merupakan penyakit kronis yang berdampak signifikan terhadap kesehatan global. Menurut Organisasi Kesehatan Dunia (WHO), jumlah penderita diabetes terus meningkat secara global, termasuk di kalangan masyarakat. Mendeteksi diabetes secara dini sangat penting untuk mencegah komplikasi yang serius, seperti kerusakan ginjal, penyakit kardiovaskular, dan kebutaan.
 Prediksi diabetes dapat membantu tenaga medis dan pengambil kebijakan dalam memberikan intervensi dini serta meningkatkan kualitas hidup pasien. Dalam konteks ini, pendekatan Machine Learning (ML) digunakan untuk membangun model prediksi berbasis data medis guna mempermudah identifikasi risiko diabetes pada masyarakat Pima.
 Berdasarkan penelitian yang dilakukan oleh Smith et al. (1988), dataset Pima Indians Diabetes dari UCI Machine Learning Repository merupakan kumpulan data yang sering digunakan dalam penelitian prediksi diabetes. Dataset ini memuat parameter kesehatan seperti tekanan darah, kadar glukosa, dan indeks massa tubuh (BMI), yang merupakan faktor risiko penting dalam diagnosis diabetes.
