@@ -8,7 +8,7 @@ Diabetes merupakan penyakit kronis yang berdampak signifikan terhadap kesehatan 
 
 Prediksi diabetes dapat membantu tenaga medis dan pengambil kebijakan dalam memberikan intervensi dini serta meningkatkan kualitas hidup pasien. Dalam konteks ini, pendekatan Machine Learning (ML) digunakan untuk membangun model prediksi berbasis data medis guna mempermudah identifikasi risiko diabetes pada masyarakat Pima.<sup>[2]</sup>
 
-Berdasarkan penelitian yang dilakukan oleh Smith et al. (1988), dataset Pima Indians Diabetes dari Kaggle merupakan kumpulan data yang sering digunakan dalam penelitian prediksi diabetes. Dataset ini memuat parameter kesehatan seperti tekanan darah, kadar glukosa, dan indeks massa tubuh (BMI), yang merupakan faktor risiko penting dalam diagnosis diabetes.
+Berdasarkan penelitian yang dilakukan oleh Smith et al. (1988), dataset Pima Indians Diabetes dari Kaggle merupakan kumpulan data yang sering digunakan dalam penelitian prediksi diabetes. Dataset ini memuat parameter kesehatan seperti tekanan darah, kadar glukosa, dan indeks massa tubuh (BMI), yang merupakan faktor risiko penting dalam diagnosis diabetes.<sup>[4]</sup>
 
 ## 💼 Business Understanding
 ### Problem Statements
@@ -188,6 +188,8 @@ Kedua model memiliki performa yang cukup baik dengan akurasi di atas 80%. Meskip
 ## References
 [1] RSUD Jembrana, "Memperingati Hari Diabetes Sedunia 2024: Mendorong kesadaran dan perubahan positif," *RSU Jembrana*, 2024. [Online]. Available: https://rsu.jembranakab.go.id/berita/read/46/memperingati-hari-diabetes-sedunia-2024-mendorong-kesadaran-dan-perubahan-positif.html
 
-[2] A. S. Ayu, A. I. Alamsyah, and A. A. Pambudi, "Implementasi algoritma Support Vector Machine (SVM) untuk klasifikasi data penyakit diabetes melitus," *Jurnal Nasional Teknik Elektro dan Teknologi Informasi (JNTETI)*, vol. 11, no. 1, pp. 26–32, 2022. [Online]. Available: https://journal.ugm.ac.id/v3/JNTETI/article/download/3586/1646/
+[2] A. S. Ayu, A. I. Alamsyah, and A. A. Pambudi, "Implementasi algoritma Support Vector Machine (SVM) untuk klasifikasi data penyakit diabetes melitus," *Jurnal Nasional Teknik Elektro dan Teknologi Informasi (JNTETI)*, vol. 11, no. 1, pp. 26–32, 2022.
 
 [3] IBM, "Apa itu Support Vector Machine?," *IBM Indonesia*, 2023. [Online]. Available: https://www.ibm.com/id-id/think/topics/support-vector-machine
+
+[4] J. W. Smith, J. E. Everhart, W. C. Dickson, W. C. Knowler, and R. S. Johannes, "Using the ADAP learning algorithm to forecast the onset of diabetes mellitus," in *Proceedings of the Symposium on Computer Applications and Medical Care*, 1988, pp. 261–265.
