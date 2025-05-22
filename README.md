@@ -18,8 +18,7 @@ Jumlah penderita diabetes yang terus meningkat menimbulkan tantangan serius dala
 ### Goals
 Proyek ini bertujuan untuk:
 - Mengembangkan model klasifikasi yang mampu memprediksi apakah seseorang berisiko diabetes berdasarkan data input seperti usia, BMI, tekanan darah, dan faktor-faktor lainnya.
-- Membandingkan kinerja dua algoritma klasifikasi yang berbeda untuk menentukan model mana yang paling efektif dan akurat.
-- Memberikan wawasan terhadap faktor-faktor yang berkontribusi besar terhadap prediksi risiko diabetes.
+- Membandingkan kinerja dua algoritma klasifikasi yang berbeda untuk menentukan model mana yang paling efektif dan akurat serta dapat memberikan wawasan terhadap faktor-faktor yang berkontribusi besar terhadap prediksi risiko diabetes.
 ### Solution Statemnts
 - Melakukan analisis data secara mendalam dimulai dari eksplorasi satu variabel (univariate) hingga hubungan antar beberapa variabel (multivariate). Proses ini juga diperkuat dengan penggunaan visualisasi data untuk mendapatkan gambaran yang lebih jelas mengenai distribusi data dan pola yang muncul. Salah satu hal penting dalam tahap ini adalah mengidentifikasi hubungan antar fitur melalui matriks korelasi serta mengenali outlier yang dapat memengaruhi hasil analisis.
 - Proyek ini bertujuan membangun model prediksi risiko diabetes yang akurat dan dapat diandalkan. Untuk mencapai tujuan ini, digunakan dua pendekatan algoritma machine learning, yaitu Support Vector Machine (SVM) dengan kernel linear dan Logistic Regression.
