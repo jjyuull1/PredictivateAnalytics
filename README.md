@@ -4,9 +4,9 @@ Domain yang dipilih untuk proyek machine learning ini adalah di bidang **Kesehat
 ### Latar Belakang
 ![diabetes](https://github.com/user-attachments/assets/edd760e8-6e88-4bc2-91b2-66e9a9929add)
 
-Diabetes merupakan penyakit kronis yang berdampak signifikan terhadap kesehatan global. Menurut Organisasi Kesehatan Dunia (WHO), jumlah penderita diabetes terus meningkat secara global, termasuk di kalangan masyarakat. Mendeteksi diabetes secara dini sangat penting untuk mencegah komplikasi yang serius, seperti kerusakan ginjal, penyakit kardiovaskular, dan kebutaan.
+Diabetes merupakan penyakit kronis yang berdampak signifikan terhadap kesehatan global. Menurut Organisasi Kesehatan Dunia (WHO), jumlah penderita diabetes terus meningkat secara global, termasuk di kalangan masyarakat. Mendeteksi diabetes secara dini sangat penting untuk mencegah komplikasi yang serius, seperti kerusakan ginjal, penyakit kardiovaskular, dan kebutaan.<sup>[1]</sup>
 
-Prediksi diabetes dapat membantu tenaga medis dan pengambil kebijakan dalam memberikan intervensi dini serta meningkatkan kualitas hidup pasien. Dalam konteks ini, pendekatan Machine Learning (ML) digunakan untuk membangun model prediksi berbasis data medis guna mempermudah identifikasi risiko diabetes pada masyarakat Pima.
+Prediksi diabetes dapat membantu tenaga medis dan pengambil kebijakan dalam memberikan intervensi dini serta meningkatkan kualitas hidup pasien. Dalam konteks ini, pendekatan Machine Learning (ML) digunakan untuk membangun model prediksi berbasis data medis guna mempermudah identifikasi risiko diabetes pada masyarakat Pima.<sup>[2]</sup>
 
 Berdasarkan penelitian yang dilakukan oleh Smith et al. (1988), dataset Pima Indians Diabetes dari Kaggle merupakan kumpulan data yang sering digunakan dalam penelitian prediksi diabetes. Dataset ini memuat parameter kesehatan seperti tekanan darah, kadar glukosa, dan indeks massa tubuh (BMI), yang merupakan faktor risiko penting dalam diagnosis diabetes.
 
@@ -23,9 +23,9 @@ Proyek ini bertujuan untuk:
 - Melakukan analisis data secara mendalam dimulai dari eksplorasi satu variabel (univariate) hingga hubungan antar beberapa variabel (multivariate). Proses ini juga diperkuat dengan penggunaan visualisasi data untuk mendapatkan gambaran yang lebih jelas mengenai distribusi data dan pola yang muncul. Salah satu hal penting dalam tahap ini adalah mengidentifikasi hubungan antar fitur melalui matriks korelasi serta mengenali outlier yang dapat memengaruhi hasil analisis.
 - Proyek ini bertujuan membangun model prediksi risiko diabetes yang akurat dan dapat diandalkan. Untuk mencapai tujuan ini, digunakan dua pendekatan algoritma machine learning, yaitu Support Vector Machine (SVM) dengan kernel linear dan Logistic Regression.
 1. Support Vector Machine (SVM) dengan Kernel Linear
-Support Vector Machine (SVM) adalah algoritma klasifikasi yang bekerja dengan mencari garis pemisah (hyperplane) terbaik yang memisahkan kelas-kelas data. Dalam proyek ini, digunakan kernel linear karena hubungan antar fitur dapat diasumsikan.
+Support Vector Machine (SVM) adalah algoritma klasifikasi yang bekerja dengan mencari garis pemisah (hyperplane) terbaik yang memisahkan kelas-kelas data. Dalam proyek ini, digunakan kernel linear karena hubungan antar fitur dapat diasumsikan. <sup>[3]</sup>
 2. Logistic Regression
-Logistic Regression adalah algoritma klasifikasi yang digunakan untuk memprediksi probabilitas suatu kejadian berdasarkan variabel input. Algoritma ini sangat cocok untuk klasifikasi biner, seperti kasus prediksi diabetes (positif/negatif). Logistic Regression menggunakan fungsi sigmoid untuk mengonversi output linear menjadi probabilitas.
+Logistic Regression adalah algoritma klasifikasi yang digunakan untuk memprediksi probabilitas suatu kejadian berdasarkan variabel input. Algoritma ini sangat cocok untuk klasifikasi biner, seperti kasus prediksi diabetes (positif/negatif). Logistic Regression menggunakan fungsi sigmoid untuk mengonversi output linear menjadi probabilitas.<sup>[2]</sup>
 
 ## 🔍 Data Understanding
 Dataset yang digunakan dalam proyek ini adalah [Pima Indians Diabetes Dataset](https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database), yang diambil dari Kaggle. Dataset ini sering digunakan untuk melakukan klasifikasi dalam mendeteksi risiko diabetes berdasarkan data klinis.
@@ -184,3 +184,10 @@ Model Logistic Regression memiliki performa serupa dengan SVM, dengan sedikit pe
 </p>
 Kedua model memiliki performa yang cukup baik dengan akurasi di atas 80%. Meskipun perbedaan akurasi antara keduanya tidak signifikan (sekitar 0.9%), Logistic Regression menunjukkan hasil yang sedikit lebih baik dibandingkan SVM dalam konteks Pima Indias Dataset.
 
+
+## References
+[1] RSUD Jembrana, "Memperingati Hari Diabetes Sedunia 2024: Mendorong kesadaran dan perubahan positif," *RSU Jembrana*, 2024. [Online]. Available: https://rsu.jembranakab.go.id/berita/read/46/memperingati-hari-diabetes-sedunia-2024-mendorong-kesadaran-dan-perubahan-positif.html
+
+[2] A. S. Ayu, A. I. Alamsyah, and A. A. Pambudi, "Implementasi algoritma Support Vector Machine (SVM) untuk klasifikasi data penyakit diabetes melitus," *Jurnal Nasional Teknik Elektro dan Teknologi Informasi (JNTETI)*, vol. 11, no. 1, pp. 26–32, 2022. [Online]. Available: https://journal.ugm.ac.id/v3/JNTETI/article/download/3586/1646/
+
+[3] IBM, "Apa itu Support Vector Machine?," *IBM Indonesia*, 2023. [Online]. Available: https://www.ibm.com/id-id/think/topics/support-vector-machine
