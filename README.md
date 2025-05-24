@@ -2,7 +2,7 @@
 ## 🧠 Domain Proyek
 Domain yang dipilih untuk proyek machine learning ini adalah di bidang **Kesehatan**, dengan judul **Predictive Analytics: Prediksi Diabetes** (Klasifikasi).
 ### Latar Belakang
-![diabetes](https://github.com/user-attachments/assets/edd760e8-6e88-4bc2-91b2-66e9a9929add)
+![diabetes](https://mandayahospitalgroup.com/wp-content/uploads/2024/05/diabetes.jpg)
 
 Diabetes merupakan penyakit kronis yang berdampak signifikan terhadap kesehatan global. Menurut Organisasi Kesehatan Dunia (WHO), jumlah penderita diabetes terus meningkat secara global, termasuk di kalangan masyarakat. Mendeteksi diabetes secara dini sangat penting untuk mencegah komplikasi yang serius, seperti kerusakan ginjal, penyakit kardiovaskular, dan kebutaan.<sup>[1]</sup>
 
