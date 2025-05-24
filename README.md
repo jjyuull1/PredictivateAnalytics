@@ -91,7 +91,7 @@ Data Preparation adalah proses dalam mempersiapkan data mentah agar dapat diguna
   <img src="https://github.com/user-attachments/assets/767f0dd4-d5ab-4cf6-a6ef-15c2929f11f7" width="45%" />
   <img src="https://github.com/user-attachments/assets/23f4fc8d-38c3-4469-8f10-692c81ee7bde" width="45%" />
   <br>
-  <em>Gambar 1. Visualisasi Missing Value</em>
+  <em>Gambar 5. Visualisasi Missing Value</em>
 </p>
 Outliers adalah data yang memiliki nilai jauh lebih tinggi atau lebih rendah dibandingkan dengan sebagian besar data lainnya dalam sebuah dataset. Pada proyek ini, meskipun tidak ditemukan missing value maupun duplikat data, namun terdapat beberapa outliers yang perlu ditangani agar model yang dibangun tetap akurat. Outliers bisa muncul karena berbagai alasan, seperti kesalahan pengukuran, data yang tidak sesuai, atau kejadian yang jarang terjadi.
 Untuk menangani outliers, salah satu metode yang digunakan adalah IQR (Interquartile Range). IQR adalah selisih antara kuartil ketiga (Q3) dan kuartil pertama (Q1).
@@ -135,13 +135,20 @@ Model SVM dibangun menggunakan `SVC` dari pustaka `sklearn.svm`. Model ini bertu
 
 ##### Logistic Regression
 Model ini menggunakan `LogisticRegression` dari pustaka `sklearn.linear_model`. Logistic Regression cocok untuk memodelkan hubungan linier antara fitur dan probabilitas kelas.
-- **Pembagian data**: Sama seperti SVM
-- **Preprocessing**: Data telah diskalakan dengan scaler agar semua fitur berada dalam skala yang sama
+- **Pembagian data**:Sama seperti model SVM, data dibagi menjadi data latih dan data uji dengan rasio 80:20.
+- **Preprocessing**: Seluruh fitur diskalakan menggunakan scaler `StandardScaler)` agar berada dalam rentang nilai yang sama, yang penting untuk konvergensi model.
+- **Inisialisasi Model**:
+```python
+logreg = LogisticRegression()
+```
 - **Parameter utama**:
-  - `solver='lbfgs'`: Optimizer default yang cocok untuk dataset berukuran sedang
-  - `penalty='l2'`: Regularisasi L2 digunakan untuk mencegah overfitting
-  - `max_iter=100`: Iterasi maksimum agar solver konvergen
-    
+  - `solver='lbfgs'`: Optimizer default yang cocok untuk dataset kecil hingga menengah dan mendukung regularisasi L2.
+  - `penalty='l2'`: Digunakan untuk mencegah overfitting dengan menambahkan penalti terhadap besarnya koefisien.
+  - `max_iter=100`: Jumlah maksimum iterasi yang dilakukan oleh solver untuk mencapai konvergensi.
+
+> **Catatan:** Parameter-parameter di atas tidak ditulis eksplisit dalam kode,  
+> namun mereka adalah default dari `LogisticRegression()` jika tidak ditentukan.
+
 #### 2. Evaluasi Awal dan Perbandingan Akurasi
 
 | Model                | Akurasi (%) |
@@ -168,7 +175,7 @@ Model terbaik yang dipilih adalah **Logistic Regression**, dengan alasan:
 Walaupun perbedaan akurasi tidak signifikan, sifat sederhana dan interpretatif dari Logistic Regression membuatnya lebih sesuai untuk kebutuhan klasifikasi pada studi ini.
 
 ## 📊 Evaluation
-### Metrik Evaluasi yang Digunakan
+### 1. Metrik Evaluasi yang Digunakan
 Dalam evaluasi model klasifikasi, digunakan beberapa metrik utama dari classification report, yaitu:
 #### Accuracy
 Mengukur proporsi prediksi yang benar terhadap seluruh data.
@@ -204,8 +211,8 @@ $$
 \mathrm{F1\text{-}Score} = 2 \cdot \frac{\mathrm{Precision} \cdot \mathrm{Recall}}{\mathrm{Precision} + \mathrm{Recall}}
 $$
 
-#### Hasil Evaluasi Model
-##### Support Vector Machine (SVM) dengan Kernel Linear
+### 2. Hasil Evaluasi Model
+#### Support Vector Machine (SVM) dengan Kernel Linear
 | Kelas    | Precision | Recall | F1-Score | Support |
 |----------|-----------|--------|----------|---------|
 | 0        | 0.85      | 0.93   | 0.89     | 83      |
@@ -214,7 +221,7 @@ $$
 
 Model SVM menunjukkan performa baik pada kelas 0 dengan precision dan recall tinggi, namun performa menurun pada kelas 1, khususnya recall yang rendah (0.52). Hal ini menunjukkan model masih kesulitan mendeteksi beberapa sampel kelas 1 (false negatives cukup tinggi).
 
-##### Logistic Regression
+#### Logistic Regression
 | Kelas    | Precision | Recall | F1-Score | Support |
 |----------|-----------|--------|----------|---------|
 | 0        | 0.85      | 0.94   | 0.89     | 83      |
@@ -223,11 +230,11 @@ Model SVM menunjukkan performa baik pada kelas 0 dengan precision dan recall tin
 
 Model Logistic Regression memiliki performa serupa dengan SVM, dengan sedikit peningkatan pada precision kelas 1 (0.75) dan akurasi keseluruhan (83%). Namun, recall untuk kelas 1 tetap rendah, mengindikasikan tantangan yang sama dalam mendeteksi kelas minoritas.
 
-#### Perbandingan Akurasi
+### 3. Perbandingan Akurasi
 <p align="center">
   <img src="https://github.com/user-attachments/assets/f2923529-664d-4824-939f-11e0a62a94be" alt="piechart" width="400"/>
   <br>
-  <em>Gambar 1. Visualisasi Perbandingan Akurasi</em>
+  <em>Gambar 6. Visualisasi Perbandingan Akurasi</em>
 </p>
 Kedua model memiliki performa yang cukup baik dengan akurasi di atas 80%. Meskipun perbedaan akurasi antara keduanya tidak signifikan (sekitar 0.9%), Logistic Regression menunjukkan hasil yang sedikit lebih baik dibandingkan SVM dalam konteks Pima Indias Dataset.
 
