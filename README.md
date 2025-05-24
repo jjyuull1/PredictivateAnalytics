@@ -197,6 +197,8 @@ $$
 \text{Precision} = \frac{\text{TP}}{\text{TP + FP}}
 $$
 
+> Precision penting ketika kesalahan prediksi positif (false positive) harus dihindari.
+
 #### Recall
 Mengukur berapa banyak dari data positif yang berhasil ditemukan oleh model.
 
@@ -204,12 +206,17 @@ $$
 \text{Recall} = \frac{\text{TP}}{\text{TP + FN}}
 $$
 
+> Recall penting ketika kesalahan tidak mendeteksi kasus positif (false negative) berisiko besar.
+
+
 #### F1-Score
 Rata-rata harmonik dari precision dan recall, berguna ketika diperlukan keseimbangan antara keduanya.
 
 $$
 \mathrm{F1\text{-}Score} = 2 \cdot \frac{\mathrm{Precision} \cdot \mathrm{Recall}}{\mathrm{Precision} + \mathrm{Recall}}
 $$
+
+> Gunakan F1-Score saat membutuhkan keseimbangan antara Precision dan Recall, terutama dalam kasus data tidak seimbang.
 
 ### 2. Hasil Evaluasi Model
 #### Support Vector Machine (SVM) dengan Kernel Linear
