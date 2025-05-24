@@ -123,15 +123,25 @@ Proses **standardisasi** dimulai dengan menginisialisasi objek `StandardScaler`,
 Standarisasi ini penting untuk memastikan bahwa semua fitur memiliki rentang nilai yang seragam, yang memungkinkan model machine learning untuk bekerja lebih efektif, terutama untuk algoritma yang sensitif terhadap perbedaan skala fitur.
 
 ## 🤖 Modeling
-Pada tahap ini, dilakukan pembangunan model machine learning untuk menyelesaikan permasalahan klasifikasi pada dataset yang telah melalui proses pra-pemrosesan sebelumnya. Dua algoritma yang digunakan dalam proses modeling adalah Support Vector Machine (SVM) dengan kernel linear dan Logistic Regression.
+Pada tahap ini, dilakukan pembangunan model machine learning untuk menyelesaikan permasalahan klasifikasi pada dataset yang telah melalui proses pra-pemrosesan sebelumnya. Dua algoritma yang digunakan dalam proses modeling adalah Support Vector Machine (SVM) dan Logistic Regression.
 #### 1. Tahapan dan Parameter Pemodelan
-- Support Vector Machine (SVM)
+##### Support Vector Machine (SVM)
+Model SVM dibangun menggunakan `SVC` dari pustaka `sklearn.svm`. Model ini bertujuan mencari *hyperplane* terbaik yang memisahkan dua kelas secara optimal.
+- **Pembagian data**: 80% data latih, 20% data uji
+- **Parameter utama**:
+  - `kernel='linear'`: Menggunakan kernel linear karena data dapat dipisahkan secara linier
+  - `C=1`: Parameter regularisasi untuk mengontrol margin (semakin besar C, semakin kecil margin)
+  - `random_state=42`: Menjamin reprodusibilitas hasil
 
-Proses pelatihan dilakukan dengan membagi data menjadi data latih dan data uji (dengan: 80:20). Model SVM dilatih untuk menemukan hyperplane terbaik yang memisahkan dua kelas secara maksimal.
-- Logistic Regression
-
-Model Logistic Regression dilatih untuk mempelajari hubungan linier antara fitur input dan probabilitas terklasifikasinya data ke masing-masing kelas target.
-
+##### Logistic Regression
+Model ini menggunakan `LogisticRegression` dari pustaka `sklearn.linear_model`. Logistic Regression cocok untuk memodelkan hubungan linier antara fitur dan probabilitas kelas.
+- **Pembagian data**: Sama seperti SVM
+- **Preprocessing**: Data telah diskalakan dengan scaler agar semua fitur berada dalam skala yang sama
+- **Parameter utama**:
+  - `solver='lbfgs'`: Optimizer default yang cocok untuk dataset berukuran sedang
+  - `penalty='l2'`: Regularisasi L2 digunakan untuk mencegah overfitting
+  - `max_iter=100`: Iterasi maksimum agar solver konvergen
+    
 #### 2. Evaluasi Awal dan Perbandingan Akurasi
 
 | Model                | Akurasi (%) |
@@ -141,8 +151,6 @@ Model Logistic Regression dilatih untuk mempelajari hubungan linier antara fitur
 
 Hasil evaluasi awal menunjukkan bahwa Logistic Regression sedikit lebih unggul dalam akurasi, walaupun perbedaannya relatif kecil.
 
----
-
 #### 3. Kelebihan dan Kekurangan Setiap Algoritma
 
 | Algoritma            | Kelebihan                                                                 | Kekurangan                                                                 |
@@ -150,13 +158,52 @@ Hasil evaluasi awal menunjukkan bahwa Logistic Regression sedikit lebih unggul d
 | **SVM**              | • Akurat pada data berdimensi tinggi<br>• Margin optimal                  | • Kurang interpretatif<br>• Kurang efisien pada dataset besar             |
 | **Logistic Regression** | • Cepat dan sederhana<br>• Mudah diinterpretasikan                     | • Tidak optimal untuk data yang tidak linier<br>• Rentan terhadap outlier |
 
+#### 4. Pemilihan Model Terbaik
+Model terbaik yang dipilih adalah **Logistic Regression**, dengan alasan:
+- Memiliki akurasi yang lebih tinggi (83.04%)
+- Mudah diinterpretasikan, sehingga memudahkan analisis lanjutan
+- Lebih efisien secara komputasi dibandingkan SVM
+- Cocok untuk dataset dengan dimensi sedang dan pemisahan linier
+
+Walaupun perbedaan akurasi tidak signifikan, sifat sederhana dan interpretatif dari Logistic Regression membuatnya lebih sesuai untuk kebutuhan klasifikasi pada studi ini.
+
 ## 📊 Evaluation
 ### Metrik Evaluasi yang Digunakan
-Dalam evaluasi model klasifikasi, digunakan beberapa metrik utama yang diperoleh dari classification report, yaitu:
-- Precision: Proporsi prediksi positif yang benar-benar positif.
-- Recall: Proporsi data positif yang berhasil ditemukan oleh model.
-- F1-Score: Harmonik rata-rata antara precision dan recall, memberikan keseimbangan antara keduanya.
-- Accuracy: Proporsi prediksi yang benar secara keseluruhan.
+Dalam evaluasi model klasifikasi, digunakan beberapa metrik utama dari classification report, yaitu:
+#### Accuracy
+Mengukur proporsi prediksi yang benar terhadap seluruh data.
+
+$$
+\text{Accuracy} = \frac{\text{TP + TN}}{\text{TP + TN + FP + FN}} \times 100\%
+$$
+
+**Penjelasan:**
+- **TP (True Positive)**: Data positif yang berhasil diprediksi positif.
+- **TN (True Negative)**: Data negatif yang berhasil diprediksi negatif.
+- **FP (False Positive)**: Data negatif yang salah diprediksi sebagai positif (Kesalahan Tipe I).
+- **FN (False Negative)**: Data positif yang salah diprediksi sebagai negatif (Kesalahan Tipe II).
+
+#### Precision
+Mengukur seberapa akurat prediksi positif model.
+
+$$
+\text{Precision} = \frac{\text{TP}}{\text{TP + FP}}
+$$
+
+#### Recall
+Mengukur berapa banyak dari data positif yang berhasil ditemukan oleh model.
+
+$$
+\text{Recall} = \frac{\text{TP}}{\text{TP + FN}}
+$$
+
+#### F1-Score
+Rata-rata harmonik dari precision dan recall, berguna ketika diperlukan keseimbangan antara keduanya.
+
+$$
+\mathrm{F1\text{-}Score} = 2 \cdot \frac{\mathrm{Precision} \cdot \mathrm{Recall}}{\mathrm{Precision} + \mathrm{Recall}}
+$$
+
 #### Hasil Evaluasi Model
 ##### Support Vector Machine (SVM) dengan Kernel Linear
 | Kelas    | Precision | Recall | F1-Score | Support |
